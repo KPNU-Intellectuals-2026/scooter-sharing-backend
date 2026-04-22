@@ -1,8 +1,9 @@
 # 🧠 Інтелектуальна адаптація вебінтерфейсів
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Language](https://img.shields.io/badge/language-JavaScript-orange)
+![Language: JavaScript](https://img.shields.io/badge/language-JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Platform: Web](https://img.shields.io/badge/platform-Web-brightgreen)
 
 Система для динамічної адаптації інтерфейсів на основі поведінкових даних користувача. Проєкт спрямований на покращення доступності та персоналізації вебдосвіду.
 
