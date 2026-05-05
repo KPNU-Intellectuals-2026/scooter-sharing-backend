@@ -1,0 +1,9 @@
+/* Базові змінні для стилізації інтерфейсу */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+
+    /* TODO: fix this later - змінити колір тексту на правильний темний відтінок згідно з дизайном */
+    --main-text-color: red; 
+}
