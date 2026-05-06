@@ -13,7 +13,6 @@ function ready(fn){
 }
 
 ready(() => {
-  BREAK_BUILD_ERROR; >>> Syntax Error <<<
   const tts = initTTS();
   const a11y = initA11yPanel({ tts });
 
