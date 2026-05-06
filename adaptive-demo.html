@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Демо: Адаптивна навігація</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Базові стилі проекту -->
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  
+  <!-- НОВИЙ файл зі стилями адаптивного меню -->
+  <link rel="stylesheet" href="css/adaptive-menu.css"/>
+
+  <style>
+    /* Невеликі виправлення для демо, щоб нові стилі працювали з наявною розміткою */
+    .mobile-menu-v2 { display: none; }
+    .mobile-menu-v2:not([hidden]) { display: flex; }
+    
+    @media (max-width: 700px) {
+      .main-nav { display: none; }
+      .burger { display: inline-flex; align-items: center; justify-content: center; }
+    }
+  </style>
+</head>
+
+<body class="theme-default measure-all">
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="./" class="logo">NewsPortal</a>
+
+      <button id="menu-toggle" class="burger ui-control" type="button" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Desktop filters (тепер зі списком для a11y) -->
+      <nav class="main-nav" id="nav-filters" aria-label="Основна навігація">
+        <ul class="nav-list" role="menubar">
+          <li role="none"><button type="button" data-filter="all" class="nav-pill active ui-control" role="menuitem">Всі</button></li>
+          <li role="none"><button type="button" data-filter="politics" class="nav-pill ui-control" role="menuitem">Політика</button></li>
+          <li role="none"><button type="button" data-filter="tech" class="nav-pill ui-control" role="menuitem">Технології</button></li>
+          <li role="none"><button type="button" data-filter="sport" class="nav-pill ui-control" role="menuitem">Спорт</button></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- Mobile filters (новий клас та структура) -->
+    <nav id="mobile-menu" class="mobile-menu-v2" hidden aria-label="Мобільне меню">
+      <ul class="mobile-nav-list" role="menu">
+        <li role="none"><button type="button" data-filter="all" class="nav-pill active ui-control" role="menuitem">Всі</button></li>
+        <li role="none"><button type="button" data-filter="politics" class="nav-pill ui-control" role="menuitem">Політика</button></li>
+        <li role="none"><button type="button" data-filter="tech" class="nav-pill ui-control" role="menuitem">Технології</button></li>
+        <li role="none"><button type="button" data-filter="sport" class="nav-pill ui-control" role="menuitem">Спорт</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="backdrop" class="backdrop" hidden aria-hidden="true"></div>
+
+  <main class="container" style="padding-top: 40px;">
+    <h1>Демонстрація адаптивної навігації</h1>
+    <p>Це окремий файл для демонстрації нових можливостей без зміни основного коду проекту.</p>
+    <ul>
+      <li><strong>Desktop:</strong> Використовуйте стрілки <code>←</code> <code>→</code> для навігації.</li>
+      <li><strong>Mobile:</strong> Зменште вікно браузера, відкрийте бургер-меню та використовуйте стрілки <code>↑</code> <code>↓</code>.</li>
+      <li><strong>Focus:</strong> Фокус автоматично переходить у відкрите меню та утримується там (Trap Focus).</li>
+    </ul>
+    <div id="status" style="margin-top: 20px; padding: 10px; border: 1px solid var(--border); border-radius: 8px;">
+      Активний фільтр: <span id="active-filter-val" style="font-weight: bold;">all</span>
+    </div>
+  </main>
+
+  <!-- Підключення НОВОГО модуля -->
+  <script type="module">
+    import { initAdaptiveNav } from './js/ui/adaptive-menu.js';
+    
+    initAdaptiveNav({
+      onFilter: (filter) => {
+        document.getElementById('active-filter-val').textContent = filter;
+        console.log('Filter changed to:', filter);
+      }
+    });
+  </script>
+</body>
+</html>
