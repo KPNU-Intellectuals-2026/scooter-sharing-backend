@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-block {
+    margin-bottom: 1.5rem;
+  }
+
+  .level-left,
+  .level-right {
+    flex-direction: column;
+  }
+
+  .level-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-copyright,
+  .footer-developed {
+    text-align: center;
+  }
+}
