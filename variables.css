@@ -1,0 +1,8 @@
+/* Базові змінні для стилізації інтерфейсу */
+:root {
+    --primary-color: #0c2e52;
+    --secondary-color: #639aca;
+    --background-color: #ccb6b6;
+
+       --main-text-color: red; 
+}
