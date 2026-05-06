@@ -12,12 +12,3 @@
     flex-direction: column;
   }
 
-  .level-item {
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-copyright,
-  .footer-developed {
-    text-align: center;
-  }
-}
