@@ -12,20 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Крок 1: Отримати код
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Крок 2: Встановити Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '18'
+          python-version: '3.11'
 
-      # Крок 3: Встановити залежності
       - name: Install dependencies
-        run: npm install
+        run: echo "No dependencies to install"
 
-      # Крок 4: Запуск тестів
       - name: Run Tests
         run: echo "Simulating tests... OK!"
